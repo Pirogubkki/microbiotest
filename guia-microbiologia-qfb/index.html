@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía Microbiología Clínica QFB</title>
+<style>
+*{box-sizing:border-box;border-radius:0;box-shadow:none}
+body{margin:0;background:#f0f0f0;font:14px Arial,Helvetica,sans-serif;color:#000}
+a{color:#0000cc;cursor:pointer}
+#w{display:grid;grid-template-columns:180px minmax(0,1fr) 180px;gap:8px;padding:8px;max-width:1600px;margin:0 auto;align-items:start}
+.bx{background:#fff;border:1px solid #000;padding:8px;margin:0 0 8px}
+.bx h3,.bx h2{margin:0 0 6px;font-size:14px;border-bottom:1px solid #000;padding-bottom:2px}
+#L a,#L button{display:block;margin:3px 0;width:100%;text-align:left}
+#top{background:#fff;border:1px solid #000;padding:4px 8px;margin-bottom:8px}
+#ban{background:#f2994a;color:#fff;font-weight:bold;font-size:18px;padding:12px;border:1px solid #000;margin-bottom:8px}
+.tab{display:none}.tab.on{display:block}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th,td{border:1px solid #000;padding:3px 5px;vertical-align:top;text-align:left}
+th{background:#f2994a;color:#fff}
+.tw{overflow-x:auto;margin-bottom:8px}
+.card{display:grid;grid-template-columns:160px 1fr;gap:8px}
+.card img,.ph{width:160px;height:120px;object-fit:cover;border:1px solid #000;background:#eee}
+.ph{display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;padding:4px;overflow:hidden;word-break:break-all}
+.card p{margin:3px 0}
+.tag{background:#000;color:#fff;font-size:11px;padding:0 4px;display:inline-block;margin-top:4px}
+button,input,select{font:inherit;border:1px solid #000;background:#fff;padding:3px 6px;margin:1px}
+button{cursor:pointer}button:hover{background:#f2994a;color:#fff}
+.opt{display:block;width:100%;text-align:left;margin:3px 0}
+.ok{background:#ccffcc!important;color:#000!important}.no{background:#ffcccc!important;color:#000!important}
+.ex{border:1px solid #000;padding:6px;margin:6px 0;background:#ffffe0}
+.r{font-size:12px}.r h3{margin-top:6px}.r b{color:#a04000}
+details{border:1px solid #000;margin:4px 0;padding:4px;background:#fff}summary{cursor:pointer;font-weight:bold}
+@media(max-width:900px){#w{grid-template-columns:minmax(0,1fr)}.card{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="w">
+
+<div id="L">
+ <div class="bx"><h3>MENÚ</h3>
+  <a onclick="show(1)">1. Estrategia 3 días y tractos</a>
+  <a onclick="show(2)">2. Atlas visual</a>
+  <a onclick="show(3)">3. Algoritmos y tablas</a>
+  <a onclick="show(4)">4. Quiz de teoría</a>
+  <a onclick="show(5)">5. Casos clínicos</a>
+ </div>
+ <div class="bx"><h3>FILTROS RÁPIDOS</h3><div id="fl"></div></div>
+ <div class="bx"><h3>PROGRESO</h3><div id="pg">Quiz: 0/0<br>Casos: 0/0</div></div>
+</div>
+
+<div id="C">
+ <div id="top"><a onclick="show(1)">Inicio</a> | <a onclick="show(2)">Atlas</a> | <a onclick="show(3)">Algoritmos</a> | <a onclick="show(4)">Quiz</a> | <a onclick="show(5)">Casos</a> | <a href="#R">Chuleta</a></div>
+ <div id="ban">GUÍA DE ESTUDIO · EXAMEN PRÁCTICO DE ANÁLISIS MICROBIOLÓGICOS · MUESTRA DESCONOCIDA EN 3 DÍAS</div>
+
+ <!-- TAB 1 -->
+ <section class="tab on" id="t1">
+  <div class="bx"><h2>Protocolo táctico de 3 días</h2>
+   <p>Regla base: <b>Gram directo → medios primarios según el tracto → lectura/pruebas rápidas → bioquímicas → integrar</b>. Siempre con bioseguridad (bata, guantes, lentes, mechero/cabina) y control de calidad (rotular, revisar caducidad de reactivos, pureza, controles +/−).</p>
+   <details open><summary>DÍA 1 — Aislamiento primario y tinciones</summary><ol>
+    <li>Rotular muestra y placas (clave, fecha, medio). Verificar tipo de muestra, medio de transporte (Stuart/Amies) y calidad. <b>LCR no se refrigera.</b></li>
+    <li><b>Gram directo</b> del producto: PMN, células epiteliales, morfología (cocos en racimos/cadenas, diplococos, bacilos Gram−/Gram+, levaduras). Esputo: aceptable &gt;25 PMN y &lt;10 células epiteliales/campo 10x.</li>
+    <li>Tinciones especiales según sospecha: <b>Ziehl-Neelsen</b> (esputo crónico), <b>tinta china/nigrosina</b> (LCR), Kinyoun (heces, ooquistes).</li>
+    <li>Sembrar medios primarios del tracto (ver tabla): rodar hisopo en cuadrante periférico y estriar en <b>pentágono</b>, esterilizando el asa entre cuadrantes (asa redonda flameada y tibia). Orina: asa calibrada 1 µL.</li>
+    <li>Incubar 35–37 °C 18–24 h (<b>CO₂ 5–10%</b> para agar sangre/chocolate cuando se buscan exigentes; SDA hasta 72 h). Conservar muestra remanente.</li>
+   </ol></details>
+   <details open><summary>DÍA 2 — Lectura de cultivos, pruebas rápidas e inoculación de bioquímicas</summary><ol>
+    <li>Leer: hemólisis (α/β/γ), lactosa (McC), manitol (ASM), pigmento, morfología colonial y <b>pureza</b>. Elegir colonia aislada representativa; contar UFC (orina ×1000).</li>
+    <li>Gram de colonia. Pruebas rápidas desde colonia: <b>catalasa</b> (Gram+), <b>oxidasa</b> (Gram−), coagulasa/DNasa, desoxicolato, ONPG, hipurato, <b>tubo germinativo</b> (levaduras; 2–3 h).</li>
+    <li>Discos y sinergismo en agar sangre: optoquina, bacitracina 0.04 U, SXT, <b>CAMP</b> (estría de S. aureus β-lisina + perpendicular a 2–3 mm).</li>
+    <li>Inocular bioquímicas con asa recta: picadura + estría (TSI, KIA, LIA); picadura (MIO a ¾, SIM); estría (citrato, urea); agitación (caldo urea, VP-RM, BHI 6.5%).</li>
+    <li>Antibiograma si procede (colonia → McFarland 0.5 → Mueller-Hinton → discos). Resembrar para pureza. Incubar 18–24 h.</li>
+   </ol></details>
+   <details open><summary>DÍA 3 — Lectura final e identificación definitiva</summary><ol>
+    <li>Leer TSI/KIA/LIA (pico/fondo, gas, H₂S), MIO/SIM (motilidad, indol con Kovacs), citrato, urea, RM (5 gotas) y VP (α-naftol 5 gotas + KOH 2 gotas; rosa en ~15 min), BE, BHI 6.5%, halos en mm.</li>
+    <li>Integrar con los <b>algoritmos</b> (pestaña 3) y confirmar con ≥2 pruebas independientes. Si algo no cuadra: sospechar reactivo caducado, cepa control inadecuada, contaminación o medio de mala calidad → repetir.</li>
+    <li>Reportar: género/especie, recuento (UFC/mL), antibiograma o baciloscopía cuantificada. Descontaminar y desechar RPBI correctamente.</li>
+   </ol></details>
+  </div>
+  <div class="bx"><h2>Mapa de bacterias y hongos por tracto</h2><div class="tw" id="tr"></div></div>
+ </section>
+
+ <!-- TAB 2 -->
+ <section class="tab" id="t2">
+  <div class="bx"><h2>Atlas visual y lectura de pruebas</h2>
+   <input id="bq" placeholder="Buscar (ej. catalasa, K/A, halo)" oninput="atlas()" size="28">
+   <select id="bc" onchange="atlas()"></select> <span id="bn"></span>
+   <p class="r">Fotos: coloca los archivos en la carpeta <b>img/</b> con el nombre indicado (.jpg, .png o .jpeg); mientras no existan verás un recuadro con el nombre esperado.</p>
+  </div>
+  <div id="al"></div>
+ </section>
+
+ <!-- TAB 3 -->
+ <section class="tab" id="t3">
+  <div class="bx"><h2>Algoritmos de decisión</h2><div id="alg"></div></div>
+  <div class="bx"><h2>Tablas comparativas tipo Koneman / MacFaddin</h2>
+   <p class="r">Leyenda: <b>+</b> positivo · <b>−</b> negativo · <b>V</b> variable · <b>K/A</b> pico alcalino/fondo ácido · <b>A/A</b> ácido/ácido · <b>K/K</b> o <b>R/R</b> alcalino/alcalino (no fermentador / lisina +) · <b>S</b> sensible · <b>R</b> resistente · <b>(g)</b> gas · <b>(H₂S)</b> ennegrecimiento.</p>
+   <div id="tb"></div>
+  </div>
+ </section>
+
+ <!-- TAB 4 -->
+ <section class="tab" id="t4">
+  <div class="bx"><h2>Quiz de teoría y fundamentos</h2><p>Validación inmediata. Las opciones se mezclan en cada intento. <span id="qs"></span> <button onclick="quiz()">Reiniciar</button></p></div>
+  <div id="qz"></div>
+ </section>
+
+ <!-- TAB 5 -->
+ <section class="tab" id="t5">
+  <div class="bx"><h2>Simulador de casos clínicos (Día 1 → Día 2 → Día 3)</h2><p>Responde cada etapa para desbloquear la siguiente. Si fallas, la opción se bloquea y puedes reintentar. <span id="cs"></span></p></div>
+  <div id="cc"></div>
+ </section>
+</div>
+
+<div id="R">
+ <div class="bx r"><h3>CHULETA RÁPIDA</h3>
+  <b>Incubación</b><br>Bacterias 35–37 °C 18–24 h · CO₂ 5–10% (chocolate, AS exigentes) · SDA levaduras 35–37 °C 24–72 h; hongos 25–30 °C · TSI/KIA/LIA leer 18–24 h (más tiempo revierte el pico) · Tubo germinativo 2–3 h · ONPG hasta 4 h · Hipurato 2 h + ninhidrina 15 min · Desoxicolato 15 min · Coagulasa tubo 4 h → 24 h · CAMP 18–24 h · RM 48 h
+  <h3>Reveladores</h3>
+  <b>Kovacs</b>: anillo rojo = indol + · <b>VP</b>: α-naftol 5 gotas + KOH 2 gotas → rosa-rojo · <b>RM</b>: rojo = + · <b>Ninhidrina</b>: púrpura = hipurato + · <b>TMPD (oxidasa)</b>: púrpura 10–30 s · <b>H₂O₂ 3%</b>: burbujas · <b>Desoxicolato Na 10%</b>: lisis de colonia
+  <h3>Puntos de corte</h3>
+  Optoquina ≥ 14 mm = S. pneumoniae · Bacitracina 0.04 U: cualquier halo = S (S. pyogenes) · Novobiocina 5 µg: ≥ 16 mm S, ≤ 12 mm R · Tubo germinativo ≤ 3 h · Orina: colonias × 1000 = UFC/mL (asa 1 µL); ≥ 10⁵ significativo · McFarland 0.5 (antibiograma, MH) · NaCl: ASM 7.5%, BHI 6.5%
+  <h3>Indicadores de pH</h3>
+  Rojo fenol: amarillo ácido / rojo alcalino · Rojo neutro: rojo ácido (&lt; 6.8) · Azul de bromotimol: amarillo ácido / verde neutro / azul alcalino · Púrpura de bromocresol: amarillo ácido / púrpura alcalino · Rojo de metilo: rojo &lt; 4.4
+  <h3>Trampas típicas</h3>
+  H₂O₂ caducado · asa de nicromo (oxidasa +) · S. aureus sin β-lisina (CAMP) · tubo germinativo &gt; 3 h · LIA falso + · contaminación · Gram sobredecolorado
+ </div>
+</div>
+
+</div>
+<script>
+/* ===== ATLAS: i=archivo img, c=categoría, n=nombre, f=fundamento, p=(+), m=(−), o=ejemplos, e=errores, t=qué muestra la foto ===== */
+const CATS=["Medios","Tinciones","Enzimáticas y rápidas","Bioquímicas","Especiales y susceptibilidad","Micología","Microorganismos","Bioseguridad y CC"];
+const A=[
+/* ---------- MEDIOS ---------- */
+{i:"agar_sangre_hemolisis",c:"Medios",n:"Agar sangre de carnero 5% (hemólisis α, β, γ)",f:"Enriquecido y diferencial: peptonas, NaCl y sangre que aporta factores de crecimiento. Base para Streptococcus; permite leer hemólisis.",p:"β: halo transparente (lisis total, estreptolisinas O y S): S. pyogenes, S. agalactiae, S. aureus. α: halo verdoso (lisis parcial; hemoglobina → metahemoglobina): S. pneumoniae y viridans.",m:"γ: sin hemólisis ni cambio del medio: E. faecalis, S. epidermidis.",o:"Faríngeo, aspirado bronquial, heridas, orina, genital. 35–37 °C 18–24 h (CO₂ 5–10% para exigentes).",e:"Leer con luz transmitida; la β débil de A. haemolyticum aparece tardía (48 h); tomar colonia arrastrando agar sangre para catalasa = falso +; sangre vieja altera la hemólisis.",t:"Placa con colonias beta (halo claro), alfa (halo verde) y gamma"},
+{i:"agar_chocolate",c:"Medios",n:"Agar chocolate",f:"Enriquecido no selectivo: la sangre se lisa por calor y libera hemina (factor X) y NAD (factor V). No se lee hemólisis.",p:"Crecen Haemophilus (necesita X y V), Neisseria (gonorrhoeae, meningitidis) y S. pneumoniae. Incubar con CO₂ 5–10% (jarra con vela).",m:"No crece en el medio sin CO₂ lo exigente; no es útil para ver hemólisis.",o:"LCR, respiratorio inferior, exudado uretral/vaginal, oftálmico.",e:"Sin CO₂ no crecen N. gonorrhoeae ni H. influenzae; sobrecalentar al preparar destruye factores.",t:"Placa de agar chocolate con colonias pequeñas grisáceas"},
+{i:"agar_macconkey",c:"Medios",n:"Agar MacConkey (McC)",f:"Selectivo (sales biliares y cristal violeta inhiben Gram+) y diferencial (lactosa + rojo neutro, vira a rojo si pH < 6.8).",p:"Colonias rosa-fucsia = lactosa (+): E. coli, Klebsiella (mucoides).",m:"Colonias incoloras = lactosa (−): P. aeruginosa (pigmento verdoso), Salmonella, Shigella, Proteus. Gram+ no crecen.",o:"Orina, coprocultivo, respiratorio inferior, heridas.",e:"Fermentadores tardíos de lactosa (confirmar con ONPG); leer a 24 h, no pasar de 48 h.",t:"Placa McC con colonias rosas (E. coli) y otra con incoloras (P. aeruginosa)"},
+{i:"agar_sal_manitol",c:"Medios",n:"Agar sal y manitol (ASM / SM)",f:"Selectivo (NaCl 7.5% inhibe casi todo menos Staphylococcus) y diferencial (manitol + rojo fenol).",p:"Amarillo = fermenta manitol: S. aureus.",m:"Rojo/rosado sin viraje: S. epidermidis, S. saprophyticus (suelen ser manitol −). E. faecalis crece pequeño sin viraje (halotolerante).",o:"Heridas, respiratorio, genital, orina.",e:"No confirma por sí solo: S. aureus requiere catalasa + coagulasa/DNasa.",t:"ASM con colonias amarillas (S. aureus) y otra sin viraje"},
+{i:"agar_nutritivo",c:"Medios",n:"Agar nutritivo",f:"Medio general no selectivo ni diferencial; control de pureza y crecimiento. Favorece pigmentos de P. aeruginosa.",p:"Crecimiento general (+) de bacterias poco exigentes (P. aeruginosa, E. coli, S. aureus).",m:"No crecen exigentes (Haemophilus, Neisseria, S. pneumoniae).",o:"Resiembra de pureza antes de pruebas.",e:"No aporta hemólisis ni fermentación; no usarlo como único medio primario.",t:"Placa de agar nutritivo con crecimiento puro"},
+{i:"agar_sabouraud",c:"Medios",n:"Agar dextrosa Sabouraud (SDA)",f:"Dextrosa alta y pH ácido (~5.6): favorece hongos y levaduras e inhibe bacterias (a veces con cloranfenicol).",p:"C. albicans: colonias cremosas, lisas, blancas en 24–48 h (35–37 °C). Hongos filamentosos 25–30 °C, días.",m:"Bacterias casi no crecen.",o:"Candida (vaginal, oral), Cryptococcus (mucoide), micosis cutáneas.",e:"Contaminantes ambientales; no diferencia especies → CHROMagar, tubo germinativo.",t:"SDA con colonias cremosas blancas de Candida"},
+{i:"caldo_bhi_nacl65",c:"Medios",n:"Caldo BHI con NaCl 6.5%",f:"Infusión cerebro-corazón hipersalina: prueba de tolerancia a sal.",p:"Turbidez = crecimiento (+): Enterococcus (E. faecalis).",m:"Caldo límpido (−): S. pyogenes, S. pneumoniae, viridans. S. agalactiae: variable.",o:"Diferencia Enterococcus de estreptococos no enterococos.",e:"Inóculo muy denso (turbidez falsa); leer a 24 y 48 h antes de dar (−).",t:"Dos tubos: uno turbio (+) y uno límpido (−)"},
+{i:"bilis_esculina",c:"Medios",n:"Bilis esculina",f:"Selectivo (bilis) y diferencial: hidrólisis de esculina → esculetina + glucosa; esculetina + citrato férrico = complejo negro.",p:"Ennegrecimiento = (+): Enterococcus y estreptococos del grupo D.",m:"Sin cambio (−): S. pyogenes, S. pneumoniae, viridans.",o:"Diferencia E. faecalis de otros cocos catalasa −.",e:"Leer a 24–48 h; ennegrecimiento parcial puede ser (+).",t:"Tubo de bilis esculina negro (+) y otro sin cambio (−)"},
+{i:"medios_entericos",c:"Medios",n:"Coprocultivo: XLD, Hektoen, SS, Verde brillante y caldos GN / tetrationato",f:"Selectivos para enteropatógenos. XLD: xilosa-lisina-desoxicolato (H₂S → centro negro). Hektoen: alta peptona para Shigella (azul de bromotimol/fucsina ácida). SS: verde brillante, citratos y tiosulfato. VB: verde brillante. Caldos GN Hajna y tetrationato (con yodo-yoduro) enriquecen antes de sembrar.",p:"Salmonella: XLD rojas con centro negro; HK azul-verdosas con centro negro; SS incoloras con centro negro; VB rosadas con halo rojo.",m:"Shigella: XLD rojas sin centro negro; HK verdes sin centro negro; crece mal en VB. E. coli (LAC+): amarilla en XLD, salmón en HK, rosa en SS.",o:"Heces: Salmonella, Shigella, E. coli diarreogénica, Yersinia.",e:"Tetrationato sin activar con yodo-yoduro (0.2 mL, 5 min) pierde selectividad; Proteus H₂S+ imita a Salmonella (urea + lo delata).",t:"XLD con colonias rojas de centro negro y otra placa HK"},
+{i:"agar_cled_cromogenico_mh",c:"Medios",n:"Urocultivo: CLED, cromogénico y Mueller-Hinton",f:"CLED: baja en electrolitos (evita el enjambre de Proteus), lactosa + azul de bromotimol, permite cuantificar. Cromogénico: sustratos hidrolizados por enzimas → color por especie. Mueller-Hinton: antibiograma.",p:"CLED: amarillo = lactosa (+) (E. coli, Klebsiella); crecimiento azul-verde = lactosa (−) (Pseudomonas, Proteus). Cromogénico: color según especie y casa comercial.",m:"Contaminación periuretral: poblaciones mixtas < 10³ UFC/mL.",o:"Orina media chorro: E. coli, Klebsiella, Proteus, P. aeruginosa, Enterococcus, S. saprophyticus.",e:"Asa calibrada 1 µL: colonias × 1000 = UFC/mL; no mezclar la lectura de color entre marcas.",t:"Placa CLED con colonias amarillas y recuento"},
+
+/* ---------- TINCIONES ---------- */
+{i:"tincion_gram",c:"Tinciones",n:"Tinción de Gram",f:"Diferencia por pared celular: Gram+ (peptidoglicano grueso) retienen cristal violeta–lugol tras decolorar; Gram− (capa delgada y membrana externa) se decoloran y toman safranina. Cristal violeta 1 min → agua → lugol 1 min → agua → alcohol-acetona 10–30 s → agua → safranina 30–60 s → agua → secar.",p:"Violeta: cocos en racimos (Staphylococcus), cadenas (Streptococcus), bacilos pleomórficos (Arcanobacterium), levaduras (Candida).",m:"Rosa: bacilos Gram− (E. coli, Pseudomonas, Klebsiella), diplococos Gram− (Neisseria).",o:"Directo de la muestra y de colonia aislada.",e:"Sobredecolorar: Gram+ se ven rosas. Subdecolorar: Gram− violetas. Cultivos > 24 h vuelven Gram+ Gram-variables. Frotis grueso o mal fijado.",t:"Campo con cocos Gram+ violetas y bacilos Gram− rosas"},
+{i:"gram_directo_calidad",c:"Tinciones",n:"Gram directo de la muestra (calidad y orientación)",f:"Antes de cultivar: evalúa calidad (PMN vs células epiteliales), morfología y disposición. Orienta los medios y descarta contaminación.",p:"Esputo aceptable: > 25 PMN y < 10 células epiteliales por campo 10x. Diplococos Gram− intracelulares en PMN = N. gonorrhoeae presuntiva. Diplococos lanceolados Gram+ = S. pneumoniae.",m:"Muchas células epiteliales y flora mixta = saliva (rechazar/solicitar nueva muestra).",o:"Respiratorio, uretral/vaginal, LCR, herida.",e:"Reportar morfología sin sobreinterpretar; correlacionar siempre con cultivo.",t:"Esputo con PMN y diplococos / campo con células epiteliales"},
+{i:"tincion_ziehl_neelsen",c:"Tinciones",n:"Ziehl-Neelsen (BAAR) – baciloscopía",f:"Ácidos micólicos de la pared retienen carbolfucsina tras alcohol-ácido. Fucsina fenicada con calor suave (vapores, sin hervir) 5 min → decolorar alcohol-ácido 1–2 min → agua → azul de metileno 1 min → secar. Fijar con calor o metanol.",p:"BAAR: bacilos rosa-rojo sobre fondo azul. Informe: 0/100 campos negativo; 1–9/100 campos n.º exacto; 10–99/100 campos (+); 1–10/campo (50 campos) (++); > 10/campo (20 campos) (+++).",m:"Solo células azules/microbiota azul-morada, sin estructuras rosas.",o:"Esputo, M. tuberculosis (no exclusivo de ella: otras micobacterias).",e:"Hervir o secar el colorante; decolorar de más/de menos; muestra mala = falso (−); la sensibilidad exige carga bacilar mínima. Positivos: manipulación con bioseguridad alta.",t:"Frotis con BAAR rosas sobre fondo azul"},
+{i:"tincion_kinyoun",c:"Tinciones",n:"Kinyoun modificada (coccidias)",f:"Variante en frío de ZN (fucsina con más fenol, sin calor) con decolorante ácido débil; tiñe ooquistes ácido-alcohol resistentes.",p:"Ooquistes rosa-rojo sobre fondo azul/verde: Cryptosporidium, Cyclospora, Cystoisospora.",m:"Levaduras y restos fecales: azul.",o:"Heces diarreicas.",e:"Decolorar de más pierde ooquistes; confundir levaduras con ooquistes.",t:"Ooquistes rosas en frotis fecal Kinyoun"},
+{i:"tinta_china_gota",c:"Tinciones",n:"Tinta china / nigrosina en GOTA (fresco)",f:"Fondo negro; la cápsula polisacárida excluye las partículas y forma un halo claro refringente. 1 gota de LCR (sedimento) + 1 gota de tinta china, cubreobjetos, observar 10x → 40x.",p:"Levaduras esféricas con gemación única (base estrecha) rodeadas de halo claro regular: Cryptococcus neoformans.",m:"Artefactos/leucocitos: halo irregular, núcleo visible, sin gemación; burbujas y partículas de tinta.",o:"LCR (meningitis criptocócica), esputo.",e:"Tinta muy espesa o preparación gruesa; sensibilidad limitada → confirmar con cultivo/antígeno criptocócico.",t:"Levaduras gemantes con halo claro sobre fondo negro (gota)"},
+{i:"nigrosina_frotis",c:"Tinciones",n:"Tinta china / nigrosina en FROTIS",f:"Tinción negativa: mezclar gota de muestra con nigrosina/tinta china y extender como frotis, secar al aire (sin calor); las células no se tiñen.",p:"Levaduras gemantes claras sobre fondo oscuro; halo capsular refringente: Cryptococcus.",m:"Células/leucocitos sin gemación y halo irregular; artefactos de secado.",o:"LCR, cultivos mucoides de levaduras.",e:"La desecación puede retraer la cápsula (halo menor que en gota); extender muy grueso oculta células.",t:"Frotis negativo con levaduras claras sobre fondo oscuro"},
+
+/* ---------- ENZIMÁTICAS Y RÁPIDAS ---------- */
+{i:"catalasa",c:"Enzimáticas y rápidas",n:"Catalasa (H₂O₂)",f:"Catalasa descompone 2 H₂O₂ → 2 H₂O + O₂. Gota de H₂O₂ al 3% sobre portaobjetos + colonia con palillo de madera.",p:"Burbujas inmediatas: Staphylococcus, E. coli, P. aeruginosa, Candida.",m:"Sin burbujas: Streptococcus, Enterococcus, A. haemolyticum.",o:"Diferencia Staphylococcus (+) de Streptococcus (−).",e:"H₂O₂ caducado → falso (−); arrastrar eritrocitos de agar sangre o usar asa de nicromo → falso (+); colonia vieja.",t:"Portaobjetos con efervescencia (+) y otro sin burbujas (−)"},
+{i:"oxidasa",c:"Enzimáticas y rápidas",n:"Oxidasa (tetrametil-p-fenilendiamina)",f:"Detecta citocromo c oxidasa: oxida el reactivo a azul/púrpura. Colonia con palillo sobre disco/papel impregnado; leer en 10–30 s.",p:"Púrpura intenso: Pseudomonas, Neisseria, Vibrio, Campylobacter.",m:"Sin color: Enterobacterales (E. coli, Klebsiella, Salmonella, Proteus).",o:"Separa no fermentadores de enterobacterias.",e:"Asa de nicromo/hierro → falso (+); leer tarde (> 30 s) → falso (+); colonias de medios con azúcares → falso (−).",t:"Disco oxidasa púrpura (+) y sin cambio (−)"},
+{i:"desoxicolato_sodio",c:"Enzimáticas y rápidas",n:"Desoxicolato de sodio 10% (solubilidad en bilis)",f:"Sales biliares activan la autolisina de S. pneumoniae y lisan la pared. 1 gota de desoxicolato al 10% sobre la colonia; leer en 15 min.",p:"La colonia se disuelve (+): S. pneumoniae.",m:"La colonia permanece intacta (−): estreptococos viridans.",o:"Confirmación de S. pneumoniae junto con optoquina.",e:"Leer a tiempo y con colonia joven; reactivo mal preparado.",t:"Colonia disuelta vs colonia intacta tras la gota"},
+{i:"onpg",c:"Enzimáticas y rápidas",n:"ONPG (β-galactosidasa)",f:"β-galactosidasa hidroliza ONPG (incoloro) → o-nitrofenol (amarillo), sin requerir fermentación. Suspensión densa de ≥ 3 colonias en 0.2 mL de agua/salina + disco; esperar hasta 4 h.",p:"Amarillo (+): E. coli, Klebsiella, fermentadores tardíos de lactosa.",m:"Incoloro (−): Salmonella, Shigella, Proteus.",o:"Detecta lactosa tardía (tiene β-galactosidasa pero carece de permeasa).",e:"Suspensión poco densa; lectura antes de tiempo; colonias de medios con lactosa.",t:"Tubos ONPG amarillo (+) e incoloro (−)"},
+{i:"hipurato_ninhidrina",c:"Enzimáticas y rápidas",n:"Hidrólisis de hipurato (ninhidrina)",f:"Hipuricasa hidroliza hipurato → ácido benzoico + glicina. Hipurato 1% (0.5 mL) + colonias, 35–37 °C 2 h; 2–3 gotas de ninhidrina, 15 min.",p:"Púrpura intenso (+): S. agalactiae, Campylobacter jejuni.",m:"Incoloro o amarillo pálido (−): S. pyogenes.",o:"S. agalactiae vs otros β-hemolíticos.",e:"Inóculo escaso; tiempo corto; leer color tenue como (+).",t:"Tubo morado (+) y tubo claro (−)"},
+{i:"coagulasa_tubo",c:"Enzimáticas y rápidas",n:"Coagulasa en tubo / DNasa / novobiocina (estafilococos)",f:"Coagulasa libre convierte fibrinógeno en fibrina. 2–3 colonias en 0.5 mL de plasma de conejo, 35–37 °C, mirar cada hora (4 h) y a 24 h. DNasa: halo claro en agar DNasa.",p:"Coágulo firme: S. aureus. DNasa +: halo claro.",m:"Sin coágulo: S. epidermidis, S. saprophyticus (SCN).",o:"Heridas, abscesos.",e:"Falso (−) por lectura temprana o agitar el tubo: repetir a las 24 h y apoyarse en DNasa/manitol.",t:"Tubo con coágulo (+) y plasma líquido (−)"},
+
+/* ---------- BIOQUÍMICAS ---------- */
+{i:"tsi",c:"Bioquímicas",n:"TSI (Triple azúcar-hierro)",f:"Glucosa 0.1%, lactosa y sacarosa 1%, rojo fenol, tiosulfato y Fe. Pico (aerobio) / fondo (anaerobio). Inocular picadura + estría.",p:"K/A (rojo/amarillo): solo glucosa (Salmonella, Shigella). A/A: lactosa y/o sacarosa (E. coli, Klebsiella). Gas: burbujas/rotura. H₂S: negro.",m:"K/K o R/R: no fermentador (P. aeruginosa).",o:"Enterobacterales y no fermentadores.",e:"Leer a 18–24 h (después el pico revierte); tapón muy apretado; confundir H₂S con color del fondo.",t:"Serie TSI: K/A H₂S+, A/A gas, R/R"},
+{i:"kia",c:"Bioquímicas",n:"KIA (Kligler)",f:"Análogo al TSI pero solo glucosa 0.1% y lactosa 1% (sin sacarosa); mismo indicador y H₂S.",p:"K/A: glucosa. A/A: lactosa fermentada.",m:"R/R: no fermentador.",o:"E. coli A/A; Salmonella/Shigella K/A; P. aeruginosa R/R.",e:"No detecta fermentadores de sacarosa; lectura tardía.",t:"Tubos KIA con diferentes reacciones"},
+{i:"lia",c:"Bioquímicas",n:"LIA (Lisina-hierro)",f:"Lisina descarboxilasa alcaliniza el fondo (púrpura de bromocresol); también H₂S y desaminación.",p:"K/K fondo púrpura intenso = lisina (+): Salmonella, Klebsiella, E. coli. H₂S: negro.",m:"K/A fondo amarillo = lisina (−): Shigella, P. aeruginosa. Pico rojo-vino (R/A): Proteus/Providencia (desaminasa).",o:"Salmonella (+) vs Proteus (R/A).",e:"Falso (+) al tomar un fondo púrpura pálido/sin cambio como positivo: valorar el color con cuidado; no leer antes de 18 h.",t:"Tubos LIA K/K, K/A y R/A"},
+{i:"mio",c:"Bioquímicas",n:"MIO (Motilidad-Indol-Ornitina)",f:"Medio semisólido. Picadura hasta ¾. Motilidad = crecimiento difuso; indol: Kovacs; ornitina descarboxilasa → fondo púrpura.",p:"Móvil: turbidez difusa; indol (+) anillo rojo; ornitina (+) púrpura.",m:"Inmóvil: crecimiento solo en la línea de siembra; ornitina (−) amarillo.",o:"Enterobacterales.",e:"Añadir Kovacs sin leer motilidad antes; picadura torcida.",t:"Tubo MIO con motilidad e indol (anillo rojo)"},
+{i:"sim",c:"Bioquímicas",n:"SIM (Sulfuro-Indol-Motilidad)",f:"Medio semisólido: H₂S con Fe (negro), indol con Kovacs (anillo rojo), motilidad por turbidez. SIM-TTZ: halo rojo difuso en móviles.",p:"H₂S (+) negro; indol (+) anillo rojo cereza; móvil.",m:"Sin ennegrecimiento, sin anillo, crecimiento solo en la picadura.",o:"E. coli: indol +, móvil; Salmonella: H₂S +; Klebsiella: inmóvil.",e:"Agregar Kovacs antes de revisar motilidad; no incubar lo suficiente.",t:"Tubos SIM con H₂S negro y anillo de indol"},
+{i:"citrato_simmons",c:"Bioquímicas",n:"Citrato de Simmons",f:"Utilización de citrato como única fuente de carbono; alcalinización con azul de bromotimol. Inocular por estría.",p:"Crecimiento + viraje verde → azul: Klebsiella, Pseudomonas, Salmonella.",m:"Sin crecimiento y verde: E. coli, Shigella.",o:"Parte del IMViC.",e:"Inóculo muy denso (arrastra nutrientes); incubar poco.",t:"Citrato azul (+) y verde (−)"},
+{i:"urea_christensen",c:"Bioquímicas",n:"Urea de Christensen / caldo urea",f:"Ureasa hidroliza urea → NH₃ que alcaliniza; rojo fenol pasa de amarillo pálido a rosa-fucsia. Christensen: estría; caldo urea: agitación.",p:"Rosa-fucsia: Proteus (rápida), Klebsiella (más lenta), S. saprophyticus, Cryptococcus.",m:"Sin cambio (amarillo): E. coli, Salmonella, Shigella.",o:"Separa Proteus de Salmonella (ambos H₂S+).",e:"Lectura muy tardía por alcalinización; inóculo insuficiente.",t:"Tubos de urea rosa (+) y amarillo (−)"},
+{i:"rojo_metilo",c:"Bioquímicas",n:"Rojo de metilo (RM)",f:"Fermentación de glucosa por ácidos mixtos mantiene pH < 4.4. Caldo VP-RM, 48 h; 5 gotas de rojo de metilo.",p:"Rojo (+): E. coli, Salmonella, Shigella.",m:"Amarillo (−): Klebsiella.",o:"IMViC: E. coli RM+.",e:"Leer antes de 48 h; usar la misma alícuota del VP.",t:"Tubo RM rojo (+) y amarillo (−)"},
+{i:"voges_proskauer",c:"Bioquímicas",n:"Voges-Proskauer (VP)",f:"Vía butanodiólica: acetoína. Adicionar α-naftol (5 gotas) y KOH (2 gotas), agitar y esperar ~15 min.",p:"Rosa-rojo (+): Klebsiella.",m:"Color cobre/sin cambio (−): E. coli.",o:"IMViC: E. coli VP−; Klebsiella VP+.",e:"Orden de reactivos incorrecto; leer pasada 1 h (cobre); poca agitación.",t:"Tubo VP rojo (+) y cobre (−)"},
+
+/* ---------- ESPECIALES Y SUSCEPTIBILIDAD ---------- */
+{i:"camp",c:"Especiales y susceptibilidad",n:"Prueba CAMP (y CAMP inverso)",f:"El factor CAMP de S. agalactiae potencia la β-lisina de S. aureus. Estría central de S. aureus β-lisina + estría perpendicular de la cepa problema a 2–3 mm sin tocar; 35–37 °C, 18–24 h.",p:"Punta de flecha de hemólisis ampliada: S. agalactiae (+). CAMP inverso: zona de inhibición de la hemólisis: A. haemolyticum.",m:"Sin sinergia ni inhibición: S. pyogenes (−).",o:"S. agalactiae vs S. pyogenes; A. haemolyticum.",e:"Cepa de S. aureus sin β-lisina → falso (−); estrías que se tocan; leer antes de 18 h.",t:"Placa CAMP con punta de flecha"},
+{i:"optoquina",c:"Especiales y susceptibilidad",n:"Optoquina (etilhidrocupreína)",f:"Inhibe la ATPasa de S. pneumoniae. Disco sobre agar sangre sembrado en césped; 35–37 °C 24 h.",p:"Halo ≥ 14 mm: sensible = S. pneumoniae.",m:"Sin halo: resistente (otros α-hemolíticos); halo < 14 mm → confirmar con desoxicolato.",o:"S. pneumoniae vs viridans.",e:"Incubar en CO₂ reduce el halo; medir mal; disco caducado.",t:"Placa con disco de optoquina y halo medido"},
+{i:"bacitracina_sxt",c:"Especiales y susceptibilidad",n:"Bacitracina 0.04 U y SXT",f:"Bacitracina inhibe la síntesis de pared; SXT = sulfametoxazol + trimetoprima. Discos sobre agar sangre sembrado (hisopo), 35–37 °C 18–24 h.",p:"Bacitracina: cualquier halo = sensible → S. pyogenes. SXT: grupos A y B resistentes; C, F, G sensibles.",m:"Crecimiento hasta el disco = resistente: S. agalactiae, A. haemolyticum (en la práctica).",o:"β-hemolíticos.",e:"Presuntiva, no definitiva: confirmar con CAMP/hipurato; inóculo escaso.",t:"Placa con discos de bacitracina y SXT"},
+{i:"novobiocina",c:"Especiales y susceptibilidad",n:"Novobiocina 5 µg",f:"Diferencia estafilococos coagulasa negativa: disco de 5 µg en Mueller-Hinton sembrado en césped, 18–24 h.",p:"Halo ≥ 16 mm: sensible = S. epidermidis.",m:"Halo ≤ 12 mm: resistente = S. saprophyticus.",o:"Orina (S. saprophyticus), heridas.",e:"Césped irregular; medir mal.",t:"Mueller-Hinton con disco de novobiocina"},
+{i:"antibiograma_mh",c:"Especiales y susceptibilidad",n:"Antibiograma Kirby-Bauer (MH, McFarland 0.5)",f:"Colonia aislada → suspensión McFarland 0.5 → hisopo en césped en Mueller-Hinton → discos separados → 36–37 °C 18–24 h → medir halos y comparar con puntos de corte (S/I/R). BLEE: sinergia con ácido clavulánico; carbapenemasas: fenotipos de resistencia.",p:"Halo ≥ punto de corte = sensible.",m:"Halo < punto de corte = resistente; fenotipos BLEE/carbapenemasa en K. pneumoniae y E. coli.",o:"E. coli, Klebsiella (orina).",e:"Inóculo sin estandarizar; discos muy juntos; MH incorrecto.",t:"Placa Mueller-Hinton con halos"},
+
+/* ---------- MICOLOGÍA ---------- */
+{i:"tubo_germinativo",c:"Micología",n:"Tubo germinativo (suero)",f:"En suero a 35–37 °C 2–3 h C. albicans/C. dubliniensis emiten una prolongación sin constricción en su base. 0.5 mL de suero + colonia; observar entre portaobjetos y cubreobjetos.",p:"Prolongaciones filamentosas verdaderas sin constricción basal: C. albicans / C. dubliniensis.",m:"Solo gemación: C. tropicalis, C. krusei, C. glabrata. > 3 h: pseudohifas con constricción (falso +).",o:"Vaginal, orofaríngeo.",e:"Sobreincubación (> 3 h); inóculo denso; no distinguir pseudohifa de tubo verdadero.",t:"Levaduras con tubo germinativo vs solo gemación"},
+{i:"chromagar_candida",c:"Micología",n:"CHROMagar Candida",f:"Medio cromogénico: enzimas liberan color por especie.",p:"C. albicans: verde claro, lisa. C. tropicalis: azul metálico. C. krusei: rosa-lila, rugosa.",m:"C. glabrata: morado oscuro (varía según casa comercial). Cryptococcus: sin color típico.",o:"Mezclas de levaduras.",e:"Leer a las 48 h; no confundir con pigmentos de la muestra.",t:"Placa CHROMagar con verde, azul y rosa"},
+{i:"fermentacion_carbohidratos",c:"Micología",n:"Fermentación de carbohidratos (zimograma)",f:"Levadura en McFarland 0.5, 2 gotas por caldo de azúcar con rojo de fenol y campana de Durham; 24–48 h a 35–37 °C.",p:"C. albicans: glucosa y maltosa. C. tropicalis: glucosa, maltosa, sacarosa.",m:"C. krusei: solo glucosa. Cryptococcus no fermenta.",o:"Glucosa, xilosa, sacarosa, maltosa, lactosa, rafinosa, trehalosa.",e:"Inóculo denso; leer pasadas 48 h.",t:"Serie de caldos de carbohidratos con campanas Durham"},
+
+/* ---------- MICROORGANISMOS ---------- */
+{i:"escherichia_coli",c:"Microorganismos",n:"Escherichia coli",f:"Bacilo Gram−. McC rosa-fucsia (LAC+). CLED amarilla. XLD amarilla.",p:"Oxidasa −; catalasa +; TSI A/A (g); indol +; RM +; ONPG +; móvil.",m:"VP −; citrato −; urea −; H₂S −.",o:"Orina (≥ 10⁵ UFC/mL), heces, herida.",e:"Falsos (−) de indol por Kovacs mal conservado; confundir con Klebsiella (inmóvil, VP+).",t:"Colonias rosas en McC y tubo de indol positivo"},
+{i:"pseudomonas_aeruginosa",c:"Microorganismos",n:"Pseudomonas aeruginosa",f:"Bacilo Gram− no fermentador. McC incolora, pigmento verdoso/azulado, olor dulce.",p:"Oxidasa +; catalasa +; citrato +; móvil; TSI R/R.",m:"No fermenta; LIA K/A; urea −; indol −.",o:"Heridas, quemaduras, otitis externa, respiratorio.",e:"LIA falso (+) por lectura incorrecta; confundir con enterobacteria si no se hace oxidasa.",t:"Colonias con pigmento verde en agar nutritivo"},
+{i:"staphylococcus_aureus",c:"Microorganismos",n:"Staphylococcus aureus",f:"Cocos Gram+ en racimos. β-hemólisis, colonias doradas/blancas. ASM amarillo.",p:"Catalasa +; coagulasa +; DNasa +; manitol +.",m:"Optoquina R; bacitracina R.",o:"Heridas, abscesos, oftálmico, respiratorio.",e:"Falso (−) coagulasa por lectura temprana; fuente de β-lisina para CAMP.",t:"ASM amarillo y Gram en racimos"},
+{i:"staphylococcus_cn",c:"Microorganismos",n:"S. epidermidis y S. saprophyticus (SCN)",f:"Cocos Gram+ en racimos, colonias blancas, ASM sin viraje.",p:"Catalasa +; coagulasa −; novobiocina S (epidermidis ≥ 16) / R (saprophyticus ≤ 12).",m:"Manitol − (suele); DNasa −.",o:"Piel (comensal), orina (S. saprophyticus en mujeres jóvenes), prótesis.",e:"Contaminante frecuente; no sobreinterpretar sin recuento.",t:"Colonias blancas en AS y ASM sin viraje"},
+{i:"enterococcus_faecalis",c:"Microorganismos",n:"Enterococcus faecalis",f:"Cocos Gram+ en pares/cadenas cortas. γ (a veces α). ASM crece sin viraje.",p:"Catalasa −; bilis esculina +; BHI 6.5% +; hipurato +.",m:"Optoquina R; bacitracina R; CAMP −.",o:"Orina, heridas, abdominal.",e:"No confundir con S. pyogenes: bilis esculina y NaCl 6.5% lo separan.",t:"Bilis esculina negro y turbidez en BHI 6.5%"},
+{i:"streptococcus_pyogenes",c:"Microorganismos",n:"Streptococcus pyogenes (grupo A)",f:"Cocos Gram+ en cadenas, colonias pequeñas con β-hemólisis amplia.",p:"Catalasa −; bacitracina S (cualquier halo).",m:"CAMP −; hipurato −; BE −; NaCl 6.5% −; SXT R.",o:"Faringoamigdalitis, escarlatina, piel.",e:"Pasar de 24 h aumenta la β; confundir con S. agalactiae sin CAMP/hipurato.",t:"β-hemólisis con disco de bacitracina con halo"},
+{i:"streptococcus_agalactiae",c:"Microorganismos",n:"Streptococcus agalactiae (grupo B)",f:"Cocos Gram+ en cadenas; β estrecha (a veces γ).",p:"Catalasa −; CAMP +; hipurato +.",m:"Bacitracina R; optoquina R.",o:"Neonatos, gestantes, urinario, vaginal.",e:"Hipurato débil: leer bien el color; CAMP depende de S. aureus β-lisina.",t:"Punta de flecha en CAMP y hipurato morado"},
+{i:"streptococcus_pneumoniae",c:"Microorganismos",n:"Streptococcus pneumoniae y viridans (α)",f:"S. pneumoniae: diplococos lanceolados Gram+; α-hemólisis, colonias planas umbilicadas. Viridans: cadenas, α.",p:"S. pneumoniae: catalasa −; optoquina S (≥ 14 mm); desoxicolato +.",m:"Viridans: optoquina R; desoxicolato −.",o:"Esputo, LCR, oído medio, oftálmico.",e:"CO₂ reduce halo de optoquina; confirmar con bilis.",t:"Halo verde con disco de optoquina"},
+{i:"klebsiella_pneumoniae",c:"Microorganismos",n:"Klebsiella pneumoniae",f:"Bacilo Gram− encapsulado. McC rosa mucoide.",p:"Oxidasa −; TSI A/A (g); VP +; citrato +; urea +; LIA K/K.",m:"Indol −; RM −; inmóvil.",o:"Neumonía, orina, herida.",e:"Mucoide: no confundir con P. aeruginosa; fenotipos BLEE/carbapenemasa.",t:"Colonias mucosas rosas en McC"},
+{i:"arcanobacterium_haemolyticum",c:"Microorganismos",n:"Arcanobacterium haemolyticum",f:"Bacilo Gram+ pleomórfico. β débil tardía (48 h).",p:"Catalasa −; CAMP inverso (inhibe β de S. aureus).",m:"Bacitracina R; SXT R (en la práctica).",o:"Faringitis adolescente con exantema.",e:"Contaminación, β débil y S. aureus sin β-lisina pueden dar lecturas confusas.",t:"Gram con bacilos pleomórficos"},
+{i:"candida_albicans",c:"Microorganismos",n:"Candida albicans",f:"Levadura gemante Gram+ con pseudohifas. SDA: colonias cremosas blancas. CHROMagar: verde.",p:"Tubo germinativo +; fermenta glucosa y maltosa; catalasa +.",m:"Urea −.",o:"Vaginal, orofaríngeo, ótico.",e:"Tubo germinativo falso (+) > 3 h.",t:"Gram con levaduras y tubos germinativos"},
+{i:"cryptococcus_neoformans",c:"Microorganismos",n:"Cryptococcus neoformans",f:"Levadura encapsulada. SDA: colonias mucoides cremosas (48–72 h).",p:"Tinta china: halo capsular; urea +; fenoloxidasa +.",m:"Tubo germinativo −; no fermenta carbohidratos.",o:"LCR en inmunodeprimidos, esputo.",e:"Confundir leucocitos con levaduras: no hay gemación.",t:"Tinta china con halo claro"},
+{i:"mycobacterium_tuberculosis",c:"Microorganismos",n:"Mycobacterium tuberculosis",f:"Bacilo ácido-alcohol resistente.",p:"ZN: bacilos rosa-rojo sobre fondo azul.",m:"No se tiñe con Gram; crecimiento lento.",o:"Esputo.",e:"Positivo no exclusivo de M. tuberculosis; negativo no descarta.",t:"Baciloscopía positiva"},
+{i:"proteus_salmonella_shigella",c:"Microorganismos",n:"Proteus mirabilis, Salmonella y Shigella",f:"Bacilos Gram− LAC−.",p:"Proteus: urea +, LIA R/A, swarming. Salmonella: TSI K/A (g) H₂S+, LIA K/K, móvil. Shigella: TSI K/A sin gas ni H₂S, LIA K/A, inmóvil.",m:"Todos oxidasa −.",o:"Heces, orina.",e:"Proteus H₂S+ imita a Salmonella.",t:"Colonias con centro negro en XLD"},
+{i:"neisseria_gonorrhoeae",c:"Microorganismos",n:"Neisseria gonorrhoeae",f:"Diplococos Gram− intracelulares en PMN. Chocolate con CO₂ (no McC).",p:"Oxidasa +; catalasa +; glucosa +.",m:"Maltosa − (N. meningitidis: glucosa y maltosa).",o:"Uretral, cervical, oftálmico.",e:"Sin CO₂ no crece; confirmar con pruebas adicionales.",t:"Gram con diplococos Gram− intracelulares"},
+{i:"haemophilus_influenzae",c:"Microorganismos",n:"Haemophilus influenzae",f:"Cocobacilo Gram− pequeño. Solo crece en chocolate (X y V).",p:"Satelitismo alrededor de S. aureus en agar sangre.",m:"No crece en McC.",o:"Respiratorio inferior, oído medio, LCR.",e:"Sin CO₂ o sin hemina/NAD no crece.",t:"Satelitismo en agar sangre"},
+
+/* ---------- BIOSEGURIDAD Y CC ---------- */
+{i:"niveles_bioseguridad",c:"Bioseguridad y CC",n:"Niveles de bioseguridad (BSL-1 a 4)",f:"Bioseguridad: principios para prevenir exposición a agentes biológicos, químicos y físicos. EPP: bata, guantes, lentes, lavado de manos.",p:"BSL-1 bajo riesgo; BSL-2 riesgo moderado y muestras clínicas; BSL-3 agentes graves por aerosoles (cultivo de M. tuberculosis); BSL-4 máxima contención.",m:"—",o:"Muestras clínicas: BSL-2.",e:"Manipular positivos de BAAR sin protección adecuada.",t:"Cabina de bioseguridad / EPP"},
+{i:"control_calidad_fases",c:"Bioseguridad y CC",n:"Control de calidad: fases preanalítica, analítica y postanalítica",f:"Preanalítica: material, etiquetado, revisión de reactivos y medios. Analítica: técnica, incubación, equipos, controles. Postanalítica: observación, interpretación, informe.",p:"Resultados confiables y reproducibles.",m:"—",o:"Cada paso del examen.",e:"Medios/reactivos caducados, contaminación cruzada, rotulado erróneo.",t:"Checklist de control de calidad"},
+{i:"residuos_rpbi",c:"Bioseguridad y CC",n:"Residuos RPBI",f:"Cubrebocas y guantes: bolsa roja de polietileno. Punzocortantes (portaobjetos): recipiente rígido de polipropileno rojo. Cultivos: RPBI previamente esterilizado. Agua con colorantes: grupo 5 (soluciones acuosas orgánicas).",p:"Segregación correcta.",m:"—",o:"Todas las prácticas.",e:"Mezclar punzocortantes con bolsa roja.",t:"Contenedores RPBI"},
+{i:"tecnica_siembra_pentagono",c:"Bioseguridad y CC",n:"Técnica de siembra por pentágono",f:"Asa redonda flameada y tibia; primera estría vertical; estriar en pentágono; esterilizar el asa entre cuadrantes; incubar 24 h a 35–36 °C.",p:"Colonias aisladas en el último cuadrante.",m:"Césped o colonias confluentes.",o:"Aislamiento primario.",e:"Asa caliente, no esterilizar, contaminar.",t:"Placa estriada en pentágono"},
+{i:"errores_tecnicos",c:"Bioseguridad y CC",n:"Errores técnicos que hay que reconocer",f:"H₂O₂ caducado (catalasa), LIA falso (+), S. aureus sin β-lisina (CAMP), sobreincubación (tubo germinativo), contaminación.",p:"Repetir con control.",m:"—",o:"Examen práctico.",e:"Reportar sin verificar.",t:"Ejemplos de errores"}
+];
+/* ===== Mapa por tractos ===== */
+const T=[
+["Respiratorio superior (exudado faríngeo)","α-hemolíticos viridans, Neisseria comensales, Corynebacterium, S. epidermidis","S. pyogenes (A), S. agalactiae, A. haemolyticum, C. diphtheriae, Candida (muguet)","Agar sangre (CO₂), McC, ASM (+ chocolate)"],
+["Respiratorio inferior (esputo, aspirado)","Contaminación orofaríngea (viridans, Neisseria, Candida)","S. pneumoniae, H. influenzae, S. aureus, K. pneumoniae, P. aeruginosa, M. catarrhalis, M. tuberculosis (BAAR)","Agar sangre, chocolate (CO₂), McC, ASM; Ziehl-Neelsen; BHI"],
+["Gastrointestinal (coprocultivo)","E. coli LAC+, Enterococcus, anaerobios, Candida","Salmonella, Shigella, E. coli diarreogénica, Yersinia, Campylobacter","Caldo GN/tetrationato → McC, XLD, HK, SS, VB"],
+["Genital (vaginal/cervical)","Lactobacillus, SCN, estreptococos, corinebacterias, Gardnerella","N. gonorrhoeae, Candida albicans, S. agalactiae, S. aureus","Agar sangre y chocolate (CO₂), McC, ASM, SDA/CHROMagar"],
+["Uretral","SCN, Corynebacterium (uretra distal)","N. gonorrhoeae (diplococos Gram− intracelulares), Candida","Chocolate (CO₂ ± Thayer-Martin), agar sangre"],
+["Urinario (urocultivo)","Contaminación periuretral < 10³ UFC/mL","E. coli, Klebsiella, Proteus, P. aeruginosa, Enterococcus, S. saprophyticus, Candida","AS, McC, CLED/cromogénico (asa 1 µL)"],
+["Heridas y secreciones (herida, ótica, oftálmica)","SCN, Corynebacterium, Propionibacterium","S. aureus, S. pyogenes, P. aeruginosa, Enterobacterales, Proteus, H. influenzae, S. pneumoniae, M. catarrhalis, N. gonorrhoeae, Aspergillus/Candida","AS, McC, ASM (+ chocolate oftálmico)"],
+["LCR","Estéril (contaminante: SCN, Propionibacterium)","S. pneumoniae, N. meningitidis, H. influenzae, S. agalactiae, Listeria, E. coli, Cryptococcus, M. tuberculosis","Chocolate y AS (CO₂), McC, BHI, SDA; Gram, tinta china, Ziehl"]
+];
+
+/* ===== QUIZ: q=pregunta, o=opciones (la 1ª es la correcta, se mezclan al cargar), x=explicación ===== */
+const QZ=[
+{q:"En agar MacConkey, una colonia rosa-fucsia indica que la bacteria:",o:["Fermenta lactosa; el ácido hace virar el rojo neutro (pH < 6.8)","No fermenta lactosa","Es Gram positiva","Produce H₂S"],x:"Lactosa (+) → acidificación → rojo neutro rojo. E. coli y Klebsiella. Las incoloras son lactosa (−)."},
+{q:"¿Qué concentración de NaCl tiene el agar sal y manitol?",o:["7.5%","0.85%","6.5%","10%"],x:"ASM: 7.5% NaCl (selectivo para Staphylococcus). El 6.5% corresponde al caldo BHI para Enterococcus."},
+{q:"La hemólisis α en agar sangre se debe a:",o:["Reducción de hemoglobina a metahemoglobina (lisis parcial, halo verdoso)","Lisis total por estreptolisinas O y S","Ausencia de hemólisis","Producción de coagulasa"],x:"α = parcial/verde (S. pneumoniae, viridans). β = total/transparente. γ = sin hemólisis."},
+{q:"La reacción de la catalasa es:",o:["2 H₂O₂ → 2 H₂O + O₂ (burbujas)","H₂O₂ → H₂ + O₂","Oxidación de TMPD","Hidrólisis de urea"],x:"Burbujas de O₂ = catalasa (+): Staphylococcus. Un H₂O₂ caducado da falso (−)."},
+{q:"Un halo de optoquina de 16 mm sobre un α-hemolítico indica:",o:["S. pneumoniae (≥ 14 mm)","Streptococcus viridans","S. pyogenes","Enterococcus faecalis"],x:"Optoquina inhibe la ATPasa de S. pneumoniae. Halo ≥ 14 mm = sensible."},
+{q:"El desoxicolato de sodio 10% lisa la colonia de S. pneumoniae porque:",o:["Activa su autolisina (LytA)","Inhibe la ATPasa","Hidroliza el hipurato","Inactiva la catalasa"],x:"Las sales biliares activan la autolisina → colonia disuelta en ~15 min."},
+{q:"El tubo germinativo se incuba en suero a 35–37 °C durante:",o:["2–3 horas","24 horas","30 minutos","48 horas"],x:"Pasar de 3 h puede dar pseudohifas (C. tropicalis) y falso (+)."},
+{q:"En la hidrólisis de hipurato, el reactivo revelador y el color positivo son:",o:["Ninhidrina: púrpura intenso (glicina)","Kovacs: anillo rojo","Cloruro férrico: negro","α-naftol: rosa"],x:"Hipuricasa → ácido benzoico + glicina; ninhidrina reacciona con la glicina. Positivo: S. agalactiae."},
+{q:"El ennegrecimiento en bilis esculina se debe a:",o:["Esculetina + citrato férrico","Producción de H₂S con tiosulfato","Ureasa","Descarboxilación de lisina"],x:"Esculina → esculetina + glucosa; la esculetina forma complejo negro con Fe."},
+{q:"En la prueba CAMP, S. agalactiae produce:",o:["Hemólisis ampliada en punta de flecha con la β-lisina de S. aureus","Una zona sin hemólisis","Halo de inhibición","Ennegrecimiento"],x:"Factor CAMP + β-lisina = sinergia. Requiere S. aureus β-lisina positivo."},
+{q:"El CAMP inverso (inhibición de la hemólisis de S. aureus) es característico de:",o:["Arcanobacterium haemolyticum","S. agalactiae","S. pyogenes","E. faecalis"],x:"A. haemolyticum (fosfolipasa D) inhibe la β-lisina de S. aureus."},
+{q:"Indicador de pH del citrato de Simmons y viraje positivo:",o:["Azul de bromotimol, verde → azul","Rojo fenol, amarillo → rosa","Rojo neutro, incoloro → rosa","Rojo de metilo, amarillo → rojo"],x:"Citrato (+) alcaliniza el medio: azul."},
+{q:"En la urea de Christensen positiva el medio vira a:",o:["Rosa-fucsia por NH₃ (rojo fenol)","Azul","Negro","Verde"],x:"La ureasa libera NH₃ que alcaliniza. Positivos: Proteus, Klebsiella (más lenta), Cryptococcus."},
+{q:"Un TSI con pico rojo, fondo amarillo, gas y ennegrecimiento es típico de:",o:["Salmonella (K/A, gas, H₂S+)","E. coli (A/A)","P. aeruginosa (R/R)","Shigella (K/A sin gas ni H₂S)"],x:"K/A = solo glucosa; H₂S+ y gas orientan a Salmonella."},
+{q:"Los reactivos de Voges-Proskauer son:",o:["α-naftol (5 gotas) y KOH (2 gotas)","Rojo de metilo","Kovacs","Ninhidrina"],x:"Acetoína + α-naftol/KOH → rosa-rojo en ~15 min. Klebsiella VP(+), E. coli VP(−)."},
+{q:"El reactivo de Kovacs revela:",o:["Indol (anillo rojo)","Acetoína","H₂S","Ornitina"],x:"Triptofanasa → indol; E. coli indol (+)."},
+{q:"En Ziehl-Neelsen, los BAAR retienen carbolfucsina por:",o:["Los ácidos micólicos de su pared","La capa gruesa de peptidoglicano","La cápsula","El lugol"],x:"Alcohol-ácido no los decolora; se ven rosa sobre fondo azul de metileno."},
+{q:"En tinta china (gota), Cryptococcus se reconoce por:",o:["Levaduras gemantes con halo capsular claro","Células sin gemación","Bacilos violetas","Cristales"],x:"Leucocitos/artefactos: halo irregular, sin gemación."},
+{q:"Una oxidasa positiva sugiere:",o:["Pseudomonas, Neisseria, Vibrio","E. coli","Klebsiella","Salmonella"],x:"TMPD vira a púrpura en 10–30 s. Enterobacterales son oxidasa (−)."},
+{q:"Una asa de nicromo en la prueba de oxidasa puede dar:",o:["Falso positivo","Falso negativo","Ninguna alteración","Inhibición del crecimiento"],x:"Los iones metálicos oxidan el reactivo. Usar palillo de madera o platino."},
+{q:"Si sobredecoloras con alcohol-acetona en el Gram:",o:["Los Gram+ se ven rosas","Los Gram− se ven violetas","Todo se ve incoloro","No cambia"],x:"Sobredecolorar elimina cristal violeta de los Gram+; se tiñen con safranina."},
+{q:"El agar chocolate permite el crecimiento de Haemophilus porque aporta:",o:["Factores X (hemina) y V (NAD)","Solo NaCl","Lactosa","Sales biliares"],x:"La sangre se lisa por calor y libera X y V."},
+{q:"Se cuentan 120 colonias con asa calibrada de 1 µL. ¿UFC/mL?",o:["120,000","1,200","12,000","120"],x:"1 µL = 0.001 mL → colonias × 1000."},
+{q:"La bacitracina 0.04 U sirve para identificar presuntivamente a:",o:["S. pyogenes (cualquier halo = sensible)","S. agalactiae","S. pneumoniae","E. faecalis"],x:"S. pyogenes es sensible; S. agalactiae resistente."},
+{q:"E. coli en el IMViC:",o:["Indol +, RM +, VP −, citrato −","Indol −, RM −, VP +, citrato +","Indol +, RM −, VP +, citrato −","Indol −, RM +, VP −, citrato +"],x:"Klebsiella: indol −, RM −, VP +, citrato +."},
+{q:"El antibiograma por difusión (Kirby-Bauer) se realiza con suspensión:",o:["McFarland 0.5 en agar Mueller-Hinton","McFarland 5 en agar sangre","Sin estandarizar","En caldo BHI"],x:"Estandarizar el inóculo es indispensable para interpretar halos."},
+{q:"Registrar e interpretar resultados corresponde a la fase:",o:["Postanalítica","Preanalítica","Analítica","Ninguna"],x:"Pre: material y etiquetado. Analítica: técnica e incubación. Post: interpretación e informe."},
+{q:"Los portaobjetos contaminados se desechan en:",o:["Recipiente rígido de polipropileno rojo (punzocortantes)","Bolsa roja de polietileno","Basura común","Drenaje"],x:"Cubrebocas y guantes van a bolsa roja de polietileno."},
+{q:"El cultivo de M. tuberculosis requiere nivel de bioseguridad:",o:["BSL-3","BSL-1","BSL-2 sin cabina","BSL-4"],x:"Riesgo por aerosoles; la baciloscopía requiere precauciones."},
+{q:"El indicador del agar sal y manitol que vira a amarillo es:",o:["Rojo fenol","Azul de bromotimol","Rojo neutro","Púrpura de bromocresol"],x:"Manitol (+) → ácido → amarillo: S. aureus."}
+];
+
+/* ===== CASOS: t=título, tr=tracto, d=[3 etapas: s=situación, q=pregunta, o=opciones (la 1ª es la correcta), x=explicación], dx=diagnóstico ===== */
+const CS=[
+{t:"Caso 1 — Faringoamigdalitis en niña de 8 años",tr:"Respiratorio superior",d:[
+{s:"Odinofagia, fiebre y exudado amigdalino. Exudado faríngeo. Gram directo: cocos Gram+ en cadenas, abundantes PMN.",q:"¿Qué medios primarios siembras?",o:["Agar sangre 5% (CO₂), McC y ASM","Solo Sabouraud a 25 °C","Löwenstein-Jensen","XLD y Hektoen"],x:"El agar sangre permite ver β-hemólisis (S. pyogenes, S. agalactiae). McC y ASM descartan Gram− y S. aureus."},
+{s:"Día 2: colonias pequeñas con halo transparente (β). Catalasa: sin burbujas.",q:"¿Qué prueba da la orientación más rápida de S. pyogenes?",o:["Disco de bacitracina 0.04 U","Optoquina","Oxidasa","Citrato"],x:"Catalasa (−) descarta Staphylococcus. Bacitracina: S. pyogenes sensible."},
+{s:"Día 3: halo de inhibición con bacitracina; CAMP (−); hipurato (−).",q:"Identificación final:",o:["S. pyogenes","S. agalactiae","A. haemolyticum","E. faecalis"],x:"S. agalactiae sería CAMP (+), hipurato (+) y bacitracina R."}],
+dx:"Streptococcus pyogenes (grupo A)."},
+{t:"Caso 2 — Faringitis con exantema en adolescente",tr:"Respiratorio superior",d:[
+{s:"Exudado faríngeo. Gram: bacilos Gram+ delgados y pleomórficos, no cocos.",q:"¿Qué haces con la incubación?",o:["Mantener 48 h antes de descartar (β débil tardía)","Descartar a las 24 h","Teñir con Ziehl","Incubar a 25 °C"],x:"La β-hemólisis de A. haemolyticum aparece tarde y débil."},
+{s:"A las 48 h: colonias pequeñas con β débil. Catalasa (−).",q:"Bacilo Gram+ pleomórfico, catalasa (−), β débil: ¿cuál sospechas?",o:["Arcanobacterium haemolyticum","Listeria (catalasa +)","S. pyogenes (cocos)","C. diphtheriae (catalasa +)"],x:"Catalasa (−) y CAMP inverso orientan a A. haemolyticum."},
+{s:"Día 3: bacitracina y SXT resistente; CAMP sin sinergia visible; no verificaste la cepa de S. aureus.",q:"Antes de reportar, ¿qué verificas?",o:["Que la cepa de S. aureus produzca β-lisina y repetir con control","Cambiar el Kovacs","Repetir Gram con más safranina","Sembrar en Sabouraud"],x:"Sin β-lisina el CAMP no es interpretable. A. haemolyticum da CAMP inverso."}],
+dx:"Arcanobacterium haemolyticum (confirmar con control de CAMP)."},
+{t:"Caso 3 — Neumonía en paciente alcohólico (aspirado bronquial)",tr:"Respiratorio inferior",d:[
+{s:"Esputo en 'jalea de grosella'. Gram directo: bacilos Gram− gruesos encapsulados.",q:"¿Medios primarios?",o:["Agar sangre, chocolate (CO₂) y McC","Solo ASM","SDA y tinta china","XLD y VB"],x:"Respiratorio inferior: sangre, chocolate y McC."},
+{s:"McC: colonias grandes, mucoides, rosa-fucsia. Oxidasa (−).",q:"¿Qué significa oxidasa (−) con lactosa (+)?",o:["Enterobacteria fermentadora de lactosa (no Pseudomonas)","Pseudomonas","Neisseria","S. pneumoniae"],x:"P. aeruginosa es oxidasa (+) y lactosa (−)."},
+{s:"Día 3: TSI A/A con gas; LIA K/K; indol (−); citrato (+); urea (+); VP (+); RM (−); inmóvil.",q:"Identificación:",o:["Klebsiella pneumoniae","E. coli","P. aeruginosa","Proteus mirabilis"],x:"E. coli: indol (+), RM (+), VP (−), citrato (−)."}],
+dx:"Klebsiella pneumoniae."},
+{t:"Caso 4 — Neumonía lobar (esputo)",tr:"Respiratorio inferior",d:[
+{s:"Esputo herrumbroso con > 25 PMN y < 10 células epiteliales/campo 10x. Gram: diplococos lanceolados Gram+.",q:"¿Qué indica la calidad del esputo?",o:["Muestra representativa; se procesa","Saliva; rechazar","Solo Ziehl","Solo Sabouraud"],x:"Criterio de calidad cumplido."},
+{s:"Agar sangre (CO₂): colonias α-hemolíticas, planas con centro umbilicado. Catalasa (−).",q:"¿Qué pruebas diferencian S. pneumoniae de viridans?",o:["Optoquina (≥ 14 mm) y desoxicolato 10%","Bacitracina y CAMP","Oxidasa y ONPG","BE y NaCl 6.5%"],x:"Bilis esculina y BHI 6.5% son para Enterococcus."},
+{s:"Día 3: halo de optoquina 18 mm; la colonia se disuelve con desoxicolato en 15 min.",q:"Identificación:",o:["S. pneumoniae","Viridans","E. faecalis","S. pyogenes"],x:"Halo 6–13 mm o CO₂ → confirmar con bilis."}],
+dx:"Streptococcus pneumoniae."},
+{t:"Caso 5 — Tos crónica y baciloscopía",tr:"Respiratorio inferior (BAAR)",d:[
+{s:"Hombre de 38 años con tos > 2 semanas, pérdida de peso y sudoración nocturna. Esputo matinal.",q:"¿Estudio y precaución?",o:["Baciloscopía con Ziehl-Neelsen y precauciones de aerosoles","Gram y agar sangre solamente","Tinta china","Coprocultivo"],x:"El cultivo de M. tuberculosis requiere BSL-3."},
+{s:"Frotis fijado. Fucsina fenicada con calor suave 5 min, alcohol-ácido 1–2 min, azul de metileno 1 min.",q:"¿Cómo se ven los BAAR?",o:["Rosa-rojo sobre fondo azul","Azules sobre fondo rosa","Violetas","Halo claro sobre fondo negro"],x:"Los ácidos micólicos retienen carbolfucsina."},
+{s:"Se cuentan 6 BAAR en 100 campos.",q:"Reporte:",o:["Número exacto (1–9 BAAR/100 campos)","(+)","Negativo","(+++)"],x:"0 negativo; 10–99/100 campos (+); 1–10/campo (++); > 10/campo (+++)."}],
+dx:"Baciloscopía positiva con 6 BAAR/100 campos."},
+{t:"Caso 6 — Diarrea aguda tras huevo crudo",tr:"Gastrointestinal",d:[
+{s:"Heces en frasco hermético.",q:"¿Estrategia de siembra?",o:["Enriquecer (GN/tetrationato) y sembrar McC, XLD, HK y SS/VB","Solo agar sangre","Solo ASM","Solo SDA"],x:"El enriquecimiento aumenta la recuperación de enteropatógenos."},
+{s:"XLD: colonias rojas con centro negro. McC: incoloras. TSI: K/A, gas, H₂S (+). LIA: K/K con H₂S. Oxidasa (−).",q:"¿Qué bacteria es compatible?",o:["Salmonella","Shigella","E. coli","P. aeruginosa"],x:"Shigella: TSI K/A sin gas ni H₂S y LIA K/A."},
+{s:"Citrato (+), urea (−), indol (−), RM (+), VP (−), móvil.",q:"¿Cómo descartas Proteus?",o:["Urea (−) y LIA K/K","Oxidasa","Catalasa","Gram"],x:"Proteus: urea (+) y LIA R/A."}],
+dx:"Salmonella spp."},
+{t:"Caso 7 — Cistitis en mujer de 28 años",tr:"Urinario",d:[
+{s:"Orina de chorro medio sembrada con asa de 1 µL en AS, McC y CLED. Cuentas 150 colonias.",q:"¿UFC/mL?",o:["150,000","150","1,500","15,000"],x:"Colonias × 1000 (asa de 1 µL)."},
+{s:"McC rosa-fucsia, CLED amarilla. Gram: bacilos Gram−. Oxidasa (−). TSI A/A con gas.",q:"¿IMViC esperado?",o:["Indol +, RM +, VP −, citrato −","Indol −, RM −, VP +, citrato +","Indol −, RM +, VP −, citrato +","Indol +, RM −, VP +, citrato −"],x:"Perfil típico de E. coli."},
+{s:"Confirmado E. coli. Se hace antibiograma.",q:"¿Condiciones?",o:["Colonia → McFarland 0.5 → Mueller-Hinton → discos → 36–37 °C 18–24 h","McFarland 5 en agar sangre","72 h","Sin estandarizar"],x:"El estándar de turbidez es indispensable."}],
+dx:"Escherichia coli (≥ 10⁵ UFC/mL)."},
+{t:"Caso 8 — Cistitis en mujer joven sexualmente activa",tr:"Urinario",d:[
+{s:"Gram de colonia: cocos Gram+ en racimos. AS: colonias blancas. ASM: crecimiento sin viraje (rojo).",q:"Primera prueba:",o:["Catalasa","Oxidasa","Optoquina","CAMP"],x:"Cocos en racimos: catalasa."},
+{s:"Catalasa (+). Coagulasa en tubo (4 h y 24 h): negativa.",q:"¿Qué descartas?",o:["S. aureus","Enterococcus","E. coli","Candida"],x:"Coagulasa (−): Staphylococcus coagulasa negativo."},
+{s:"Novobiocina 5 µg: halo 10 mm.",q:"Interpretación:",o:["Resistente (≤ 12 mm): S. saprophyticus","Sensible: S. epidermidis","Sensible: S. aureus","Repetir sin interpretar"],x:"S. epidermidis ≥ 16 mm."}],
+dx:"Staphylococcus saprophyticus."},
+{t:"Caso 9 — Flujo blanco grumoso y prurito",tr:"Genital",d:[
+{s:"Exudado vaginal. Gram: levaduras gemantes Gram+ y pseudohifas; pocos Lactobacillus.",q:"¿Medios?",o:["SDA (± CHROMagar), agar sangre/chocolate, McC y ASM","Solo McC","LJ","XLD"],x:"SDA/CHROMagar para levaduras."},
+{s:"SDA: colonias cremosas blancas. CHROMagar: verde. Haces tubo germinativo.",q:"¿Cómo?",o:["Colonia en 0.5 mL de suero, 35–37 °C 2–3 h","En agua 24 h","Suero a 4 °C","Agar sangre 48 h"],x:"Observar entre porta y cubre."},
+{s:"A las 2 h: prolongaciones filamentosas sin constricción basal.",q:"Interpretación:",o:["Tubo germinativo (+): C. albicans","Negativo","C. tropicalis","C. krusei"],x:"Pasadas 3 h, C. tropicalis puede dar falso (+)."}],
+dx:"Candida albicans."},
+{t:"Caso 10 — Secreción uretral purulenta",tr:"Uretral",d:[
+{s:"Gram directo: diplococos Gram− intracelulares dentro de PMN.",q:"¿Qué sugiere?",o:["N. gonorrhoeae; sembrar chocolate con CO₂","Candida","Tuberculosis","Staphylococcus"],x:"Hallazgo presuntivo."},
+{s:"Chocolate con CO₂: colonias pequeñas grisáceas; no crece en McC. Oxidasa (+).",q:"¿Qué hallazgo apoya Neisseria frente a enterobacterias?",o:["Oxidasa (+) y ausencia en McC","Catalasa (−)","Indol (+)","TSI A/A"],x:"Enterobacterales son oxidasa (−)."},
+{s:"Fermentación: solo glucosa (+).",q:"Dx presuntivo:",o:["N. gonorrhoeae","N. meningitidis","Moraxella","E. coli"],x:"N. meningitidis fermenta glucosa y maltosa."}],
+dx:"Neisseria gonorrhoeae (presuntivo)."},
+{t:"Caso 11 — Meningitis subaguda en paciente con VIH",tr:"LCR",d:[
+{s:"LCR claro, hipertensión. No se refrigera.",q:"¿Qué preparación en fresco?",o:["Tinta china (gota) del sedimento","Ziehl en caliente","KOH","Fucsina"],x:"Tinta china: halo capsular."},
+{s:"Levaduras esféricas gemantes con halo claro; algunas células con halo irregular sin gemación.",q:"¿Cómo distingues Cryptococcus de artefactos?",o:["Gemación y halo regular; leucocitos con núcleo visible","Los leucocitos también gemman","Por tamaño solamente","No es posible"],x:"Cryptococcus: gemación única."},
+{s:"SDA 35 °C: colonias mucoides cremosas a las 72 h. Urea (+). Tubo germinativo (−).",q:"Identificación:",o:["Cryptococcus neoformans","C. albicans","C. tropicalis","Histoplasma"],x:"C. albicans: tubo germinativo (+), urea (−)."}],
+dx:"Cryptococcus neoformans."},
+{t:"Caso 12 — Quemadura infectada con secreción verdosa",tr:"Heridas",d:[
+{s:"Hisopo de quemadura. Gram directo: bacilos Gram−.",q:"¿Medios?",o:["Agar sangre, McC y ASM","SDA solamente","Löwenstein-Jensen","XLD"],x:"Medios estándar para heridas."},
+{s:"McC: colonias incoloras. AS: β y pigmento verde-azulado. Catalasa (+), oxidasa (+).",q:"Grupo probable:",o:["Bacilo Gram− no fermentador (Pseudomonas)","Enterobacteria fermentadora","Coco Gram+","Levadura"],x:"Oxidasa (+) y lactosa (−)."},
+{s:"TSI R/R sin gas ni H₂S; LIA K/A; citrato (+); móvil; indol (−).",q:"¿Qué significa TSI R/R?",o:["No fermenta glucosa, lactosa ni sacarosa","Fermenta lactosa","Produce H₂S","Descarboxila lisina"],x:"Cuidado con LIA: un fondo púrpura pálido no es positivo."}],
+dx:"Pseudomonas aeruginosa."},
+{t:"Caso 13 — Absceso cutáneo (trampa de control de calidad)",tr:"Heridas",d:[
+{s:"Pus de absceso. Gram: cocos Gram+ en racimos con PMN.",q:"¿Medios?",o:["Agar sangre, ASM y McC","XLD","LJ","SDA"],x:"Cocos en racimos: Staphylococcus."},
+{s:"AS: β-hemólisis, colonias doradas/blancas. ASM: amarillo. Catalasa (+).",q:"¿Qué prueba confirma S. aureus?",o:["Coagulasa en tubo y/o DNasa","Optoquina","CAMP","Bilis esculina"],x:"ASM amarillo + catalasa (+) orientan."},
+{s:"Coagulasa en tubo a las 4 h: negativa.",q:"¿Qué haces?",o:["Seguir incubando hasta 24 h y apoyarte en DNasa","Reportar S. epidermidis","Reportar flora normal","Descartar"],x:"Falso (−) por lectura temprana."}],
+dx:"Staphylococcus aureus (coagulasa tardía; confirmar con DNasa)."}
+];
+
+/* ===== ALGORITMOS (árboles paso a paso) ===== */
+const ALG=[
+{t:"A) Cocos Gram+",h:`<ol>
+<li><b>Catalasa</b> (H₂O₂ 3%):
+ <ul><li><b>(+) Staphylococcus</b> → ASM + <b>coagulasa/DNasa</b>:
+  <ul><li>Coagulasa (+), DNasa (+), manitol (+) amarillo → <b>S. aureus</b> (β-hemólisis, doradas). Si coagulasa (−) a 4 h, seguir hasta 24 h.</li>
+  <li>Coagulasa (−) (SCN) → <b>novobiocina 5 µg</b>: ≥ 16 mm S = <b>S. epidermidis</b>; ≤ 12 mm R = <b>S. saprophyticus</b> (orina).</li></ul></li>
+ <li><b>(−) Streptococcus / Enterococcus</b> → mirar <b>hemólisis</b> en agar sangre:
+  <ul><li><b>β</b> → bacitracina 0.04 U: halo = S → <b>S. pyogenes</b> (CAMP −, hipurato −). Resistente → CAMP (+) / hipurato (+) → <b>S. agalactiae</b>.</li>
+  <li><b>α</b> → optoquina (≥ 14 mm) y desoxicolato: sensible/lisis → <b>S. pneumoniae</b>; resistente → <b>viridans</b>.</li>
+  <li><b>γ o α</b> → bilis esculina (+) y BHI 6.5% (+) → <b>Enterococcus (E. faecalis)</b>.</li></ul></li></ul></li></ol>`},
+{t:"B) Bacilos Gram−",h:`<ol>
+<li><b>Oxidasa</b>:
+ <ul><li><b>(+)</b>: McC incolora, pigmento verdoso, TSI R/R, citrato (+) → <b>Pseudomonas aeruginosa</b>. Si es diplococo y solo crece en chocolate → <b>Neisseria</b>.</li>
+ <li><b>(−) Enterobacterales</b> → McC:
+  <ul><li><b>Lactosa (+) rosa</b>, TSI A/A (g): indol (+), RM (+), VP (−), citrato (−) → <b>E. coli</b>; indol (−), VP (+), citrato (+), urea (+), inmóvil → <b>Klebsiella</b>.</li>
+  <li><b>Lactosa (−) incolora</b>: TSI K/A + H₂S (+), LIA K/K, urea (−) → <b>Salmonella</b>; TSI K/A sin gas/H₂S, LIA K/A, inmóvil → <b>Shigella</b>; urea (+), LIA R/A, swarming → <b>Proteus</b>.</li></ul></li></ul></li>
+<li>Exigentes de respiratorio (satelitismo, solo en chocolate) → <b>Haemophilus</b>. Confirmar con ≥ 2 pruebas independientes.</li></ol>`},
+{t:"C) Bacilos Gram+ pleomórficos",h:`<ol>
+<li>Gram: bacilos pleomórficos, «letras chinas».</li>
+<li><b>Catalasa</b>:
+ <ul><li><b>(−)</b>, β débil tardía (48 h), CAMP inverso, bacitracina/SXT R → <b>Arcanobacterium haemolyticum</b>.</li>
+ <li><b>(+)</b>, sin hemólisis → <b>Corynebacterium</b>; si además es móvil y β estrecha → considerar <b>Listeria</b>.</li></ul></li>
+<li>Control de calidad: verifica la cepa de S. aureus β-lisina antes de dar CAMP (−).</li></ol>`},
+{t:"D) Baciloscopía (BAAR)",h:`<ol>
+<li>Frotis fino, secar al aire, fijar (calor/metanol).</li>
+<li>Ziehl-Neelsen: fucsina fenicada + calor suave 5 min → alcohol-ácido 1–2 min → azul de metileno 1 min.</li>
+<li>Leer 100 campos (objetivo 100x): rosa-rojo sobre azul = BAAR.</li>
+<li>Reportar: 0/100 campos negativo; 1–9/100 campos número exacto; 10–99/100 campos (+); 1–10/campo (++); &gt; 10/campo (+++).</li>
+<li>Nota: BAAR no es exclusivo de M. tuberculosis; un negativo no descarta TB. Cultivo: BSL-3.</li></ol>`},
+{t:"E) Levaduras",h:`<ol>
+<li>SDA: colonias cremosas blancas. Gram: levaduras gemantes Gram+.</li>
+<li><b>Tubo germinativo</b> (suero, 2–3 h):
+ <ul><li><b>(+)</b> sin constricción → <b>C. albicans / C. dubliniensis</b> (CHROMagar verde).</li>
+ <li><b>(−)</b> → CHROMagar: azul metálico = <b>C. tropicalis</b>; rosa-lila rugosa = <b>C. krusei</b>; morado oscuro = <b>C. glabrata</b>.</li></ul></li>
+<li>Colonia mucoide + <b>tinta china con halo</b> + urea (+) + tubo (−) → <b>Cryptococcus neoformans</b>.</li></ol>`}
+];
+
+/* ===== TABLAS ===== */
+const TB=[
+{t:"Tabla 1. Enterobacterales y no fermentadores",h:["Organismo","McC","Oxid","TSI","H₂S","LIA","Indol","RM","VP","Citr","Urea","Mot"],r:[
+["E. coli","Rosa","−","A/A (g)","−","K/K","+","+","−","−","−","+"],
+["K. pneumoniae","Rosa mucoide","−","A/A (g)","−","K/K","−","−","+","+","+","−"],
+["P. aeruginosa","Incolora","+","R/R","−","K/A","−","−","−","+","−","+"],
+["Salmonella","Incolora","−","K/A (g)","+","K/K","−","+","−","+","−","+"],
+["Shigella","Incolora","−","K/A","−","K/A","V","+","−","−","−","−"],
+["P. mirabilis","Incolora","−","K/A (g)","+","R/A","−","+","V","V","+","+"]]},
+{t:"Tabla 2. Cocos Gram+",h:["Organismo","Hemólisis","Cat","Coag","Bacit","Optoq","Desox","BE","NaCl 6.5%","CAMP","Hip"],r:[
+["S. aureus","β","+","+","R","R","−","−","+","—","—"],
+["S. epidermidis","γ","+","−","R","R","−","−","+","—","—"],
+["S. saprophyticus","γ","+","−","R","R","−","−","+","—","—"],
+["S. pyogenes","β","−","—","S","R","−","−","−","−","−"],
+["S. agalactiae","β estrecha","−","—","R","R","−","−","V","+","+"],
+["S. pneumoniae","α","−","—","R","S (≥ 14 mm)","+","−","−","−","−"],
+["Viridans","α/γ","−","—","R","R","−","−","−","−","−"],
+["E. faecalis","γ (± α)","−","—","R","R","−","+","+","−","+"]]},
+{t:"Tabla 3. Levaduras",h:["Organismo","CHROMagar","Tubo germinativo","Gram","Tinta china","Urea","Fermentación"],r:[
+["C. albicans","Verde","+","Levadura+","−","−","Glucosa, maltosa"],
+["C. tropicalis","Azul metálico","− (pseudohifa si > 3 h)","Levadura+","−","−","Glucosa, maltosa, sacarosa"],
+["C. krusei","Rosa-lila rugosa","−","Levadura+","−","+ débil","Solo glucosa"],
+["C. glabrata","Morado oscuro","−","Levadura+","−","−","Glucosa y trehalosa"],
+["C. neoformans","Sin color típico","−","Levadura+","+ halo","+","No fermenta"]]},
+{t:"Tabla 4. Cómo leer TSI/KIA/LIA",h:["Reacción","Pico/fondo","Significado"],r:[
+["K/A","Rojo / amarillo","Solo glucosa fermentada"],
+["A/A","Amarillo / amarillo","Glucosa + lactosa (y/o sacarosa)"],
+["K/K o R/R","Rojo / rojo","No fermentador (o lisina + en LIA)"],
+["Gas","Burbujas o rotura","Producción de CO₂/H₂"],
+["H₂S","Ennegrecimiento","Tiosulfato + Fe"],
+["LIA K/K púrpura","Fondo púrpura","Lisina descarboxilasa (+)"],
+["LIA R/A","Pico rojo-vino","Desaminación: Proteus/Providencia"]]},
+{t:"Tabla 5. Indicadores de pH",h:["Indicador","Ácido","Alcalino"],r:[
+["Rojo fenol","Amarillo","Rojo-fucsia"],
+["Rojo neutro","Rojo (&lt; 6.8)","Amarillo"],
+["Azul de bromotimol","Amarillo","Azul (verde = neutro)"],
+["Púrpura de bromocresol","Amarillo","Púrpura"],
+["Rojo de metilo","Rojo (&lt; 4.4)","Amarillo"]]}
+];
+
+/* ===== MOTOR ===== */
+const Q=s=>document.querySelector(s),QA=s=>[...document.querySelectorAll(s)];
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+function show(n){QA('.tab').forEach((e,i)=>e.classList.toggle('on',i==n-1));window.scrollTo(0,0);}
+
+/* Imágenes: .jpg → .png → .jpeg (+ variantes en mayúscula) → recuadro con nombre esperado */
+const EXT=['png','jpeg','JPG','PNG','JPEG'];
+function im(n,t){return `<img src="img/${n}.jpg" data-n="${n}" data-t="${t}" alt="${n}" loading="lazy" onerror="ie(this)">`;}
+function ie(e){const k=+(e.dataset.k||0);if(k<EXT.length){e.dataset.k=k+1;e.src='img/'+e.dataset.n+'.'+EXT[k];}
+ else{const d=document.createElement('div');d.className='ph';d.innerHTML='<div>Falta imagen:<br><b>img/'+e.dataset.n+'.jpg</b><br><i>'+e.dataset.t+'</i></div>';e.replaceWith(d);}}
+
+/* Atlas */
+const LAB=[['Fundamento','Lectura (+)','Lectura (−)','Ejemplos','Errores comunes'],['Morfología y cultivo','Pruebas (+) / claves','Pruebas (−) / diferenciar','Muestras típicas','Trampas y control de calidad']];
+function atlas(){
+ const q=Q('#bq').value.toLowerCase(),c=Q('#bc').value;
+ const L=A.filter(a=>(!c||a.c==c)&&(a.n+a.f+a.p+a.m+a.o+a.e).toLowerCase().includes(q));
+ Q('#al').innerHTML=L.map(a=>{const l=LAB[a.c=='Microorganismos'?1:0];
+  return `<div class="bx card"><div>${im(a.i,a.t)}<br><span class="tag">${a.c}</span></div><div class="r"><h3>${a.n}</h3>
+  <p><b>${l[0]}:</b> ${a.f}</p><p><b>${l[1]}:</b> ${a.p}</p><p><b>${l[2]}:</b> ${a.m}</p><p><b>${l[3]}:</b> ${a.o}</p><p><b>${l[4]}:</b> ${a.e}</p></div></div>`;}).join('')||'<div class="bx">Sin resultados.</div>';
+ Q('#bn').textContent=L.length+' fichas';
+}
+function filtro(c){show(2);Q('#bc').value=c;Q('#bq').value='';atlas();}
+
+/* Tractos, algoritmos, tablas */
+function tractos(){Q('#tr').innerHTML='<table><tr><th>Tracto / muestra</th><th>Microbiota normal a ignorar</th><th>Patógenos y hongos esperados</th><th>Medios primarios (Día 1)</th></tr>'+T.map(r=>'<tr>'+r.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')+'</table>';}
+function algs(){Q('#alg').innerHTML=ALG.map((a,i)=>`<details ${i==0?'open':''}><summary>${a.t}</summary>${a.h}</details>`).join('');}
+function tablas(){Q('#tb').innerHTML=TB.map(t=>`<div class="tw"><table><caption><b>${t.t}</b></caption><tr>${t.h.map(x=>'<th>'+x+'</th>').join('')}</tr>${t.r.map(r=>'<tr>'+r.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')}</table></div>`).join('');}
+
+/* Progreso */
+let qOk=0,qDone=0,cOk=0,cTot=CS.length*3;
+function prog(){Q('#pg').innerHTML=`Quiz: ${qOk}/${QZ.length}<br>Casos: ${cOk}/${cTot} etapas`;Q('#qs').textContent=`Aciertos: ${qOk}/${qDone} contestadas de ${QZ.length}.`;Q('#cs').textContent=`Etapas resueltas: ${cOk}/${cTot}.`;}
+
+/* Quiz */
+function quiz(){
+ qOk=0;qDone=0;
+ const L=sh(QZ.map((q,i)=>i));
+ Q('#qz').innerHTML=L.map((qi,n)=>{const q=QZ[qi],o=sh(q.o.map((t,j)=>[t,j==0]));
+  return `<div class="bx" data-d=""><b>${n+1}. ${q.q}</b>${o.map(([t,ok],j)=>`<button class="opt" data-ok="${ok?1:0}" onclick="resp(this)">${'ABCD'[j]}) ${t}</button>`).join('')}<div class="ex" hidden>${q.x}</div></div>`;}).join('');
+ prog();
+}
+function resp(b){
+ const p=b.parentNode;if(p.dataset.d)return;p.dataset.d=1;
+ const ok=b.dataset.ok==1;b.classList.add(ok?'ok':'no');
+ if(!ok)p.querySelector('[data-ok="1"]').classList.add('ok');
+ p.querySelector('.ex').hidden=false;p.querySelector('.ex').innerHTML=(ok?'<b>¡Correcto!</b> ':'<b>Incorrecto.</b> ')+p.querySelector('.ex').innerHTML;
+ qDone++;if(ok)qOk++;prog();
+}
+
+/* Casos clínicos */
+function casos(){
+ cOk=0;
+ Q('#cc').innerHTML=CS.map((c,ci)=>`<details ${ci==0?'open':''}><summary>${c.t} <span class="tag">${c.tr}</span></summary>${c.d.map((e,si)=>{
+  const o=sh(e.o.map((t,j)=>[t,j==0]));
+  return `<div class="bx" id="e${ci}_${si}" ${si?'hidden':''}><h3>DÍA ${si+1}</h3><p>${e.s}</p><p><b>${e.q}</b></p>${o.map(([t,ok],j)=>`<button class="opt" data-ok="${ok?1:0}" onclick="stage(${ci},${si},this)">${'ABCD'[j]}) ${t}</button>`).join('')}<div class="ex" hidden>${e.x}</div></div>`;}).join('')}
+  <div class="ex" id="dx${ci}" hidden><b>Diagnóstico final:</b> ${c.dx}</div></details>`).join('');
+ prog();
+}
+function stage(ci,si,b){
+ const p=b.parentNode;if(p.dataset.d)return;
+ const ok=b.dataset.ok==1,x=p.querySelector('.ex');
+ b.classList.add(ok?'ok':'no');x.hidden=false;
+ if(!ok){b.disabled=true;x.innerHTML='<b>Incorrecto, inténtalo de nuevo.</b> Relee la situación del día.';return;}
+ p.dataset.d=1;cOk++;x.innerHTML='<b>¡Correcto!</b> '+CS[ci].d[si].x;
+ const nx=Q('#e'+ci+'_'+(si+1));
+ if(nx)nx.hidden=false;else Q('#dx'+ci).hidden=false;
+ prog();
+}
+
+/* Inicio */
+(function(){
+ Q('#bc').innerHTML='<option value="">Todas las categorías</option>'+CATS.map(c=>`<option>${c}</option>`).join('');
+ Q('#fl').innerHTML=CATS.map(c=>`<a onclick="filtro('${c}')">▸ ${c}</a>`).join('');
+ tractos();algs();tablas();atlas();quiz();casos();prog();
+})();
+
+</script>
+</body>
+</html>
