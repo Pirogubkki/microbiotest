@@ -31,6 +31,13 @@ button{cursor:pointer}button:hover{background:#f2994a;color:#fff}
 .ex{border:1px solid #000;padding:6px;margin:6px 0;background:#ffffe0}
 .r{font-size:12px}.r h3{margin-top:6px}.r b{color:#a04000}
 details{border:1px solid #000;margin:4px 0;padding:4px;background:#fff}summary{cursor:pointer;font-weight:bold}
+#al .card img,#al .ph{cursor:zoom-in}
+#zm{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#f0f0f0;z-index:9;overflow:auto;padding:8px}
+#zm.on{display:block}
+#zm img,#zm .ph{display:block;width:100%;max-width:900px;height:auto;max-height:65vh;object-fit:contain;margin:0 auto;border:1px solid #000;background:#fff;cursor:zoom-out}
+#zm .ph{height:40vh;font-size:14px}
+.zd{max-width:900px;margin:8px auto;background:#fff;border:1px solid #000;padding:8px;cursor:zoom-out}
+.zd .r{font-size:14px}
 @media(max-width:900px){#w{grid-template-columns:minmax(0,1fr)}.card{grid-template-columns:1fr}}
 </style>
 </head>
@@ -127,6 +134,7 @@ details{border:1px solid #000;margin:4px 0;padding:4px;background:#fff}summary{c
 </div>
 
 </div>
+<div id="zm" onclick="unzoom()"></div>
 <script>
 /* ===== ATLAS: i=archivo img, c=categoría, n=nombre, f=fundamento, p=(+), m=(−), o=ejemplos, e=errores, t=qué muestra la foto ===== */
 const CATS=["Medios","Tinciones","Enzimáticas y rápidas","Bioquímicas","Especiales y susceptibilidad","Micología","Microorganismos","Bioseguridad y CC"];
@@ -428,6 +436,12 @@ function atlas(){
   <p><b>${l[0]}:</b> ${a.f}</p><p><b>${l[1]}:</b> ${a.p}</p><p><b>${l[2]}:</b> ${a.m}</p><p><b>${l[3]}:</b> ${a.o}</p><p><b>${l[4]}:</b> ${a.e}</p></div></div>`;}).join('')||'<div class="bx">Sin resultados.</div>';
  Q('#bn').textContent=L.length+' fichas';
 }
+/* Expandir imagen del atlas + descripción; otro toque la contrae */
+function zoom(el){const c=el.closest('.card'),o=Q('#zm'),g=el.cloneNode(true);g.removeAttribute('loading');
+ o.innerHTML='';o.appendChild(g);const d=document.createElement('div');d.className='zd';d.innerHTML=c.querySelector('.r').outerHTML;o.appendChild(d);o.classList.add('on');}
+function unzoom(){Q('#zm').classList.remove('on');Q('#zm').innerHTML='';}
+document.addEventListener('click',e=>{const t=e.target.closest('#al .card img,#al .card .ph');if(t)zoom(t);});
+document.addEventListener('keydown',e=>{if(e.key=='Escape')unzoom();});
 function filtro(c){show(2);Q('#bc').value=c;Q('#bq').value='';atlas();}
 
 /* Tractos, algoritmos, tablas */
